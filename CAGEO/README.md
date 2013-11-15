@@ -1,4 +1,4 @@
-[![Screenshot Computers and Geosciences page](doc/images/CAGEO_2013.png?raw=true)](http://www.sciencedirect.com/science/article/pii/S0098300413002781)
+<a href="http://www.sciencedirect.com/science/article/pii/S0098300413002781", target="_blank">![Screenshot Computers and Geosciences page](doc/images/CAGEO_2013.png?raw=true)]</a>
 
 Information
 ----
