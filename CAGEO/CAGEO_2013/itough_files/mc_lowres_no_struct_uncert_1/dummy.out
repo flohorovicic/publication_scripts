@@ -1,0 +1,11 @@
+This is a dummy  output file for the PEST instruction file dummy.ins to read.
+ Add the following block to the iTOUGH2 input file:
+
+ > OBSERVATION block:
+   >> PEST
+      >>> UNIVERSAL
+          >>>> DATA
+               dummy  0.0   1.0E-20
+          <<<<
+      <<<
+

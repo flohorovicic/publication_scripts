@@ -1,0 +1,36 @@
+
+ ==================================================================
+      S T A T U S   O F   i T O U G H 2   S I M U L A T I O N
+ ==================================================================
+
+ Date                        : 27-Feb-13  11:28
+ iTOUGH2 file                : CO2_itough_inv
+ TOUGH2 file                 : CO2_fwd
+ Working directory           : /home/flo/04_iTOUGH2/CO2_paper/test_fwd_new_model/test_fwd_lowres
+ Temporary directory         : /home/flo/it2_13222
+ UNIX command line arguments : -no_delete -m MESH -i CO2_incon.inc CO2_itough_inv.inv CO2_fwd.dat 17
+ Comment                     : First guess. Fit improved.                                                     
+
+ Iterations completed        :              0    Iterations to go      1
+ TOUGH2 runs completed       :              1    Unsuccessful steps    0
+ TOUGH2 runs to go (approx.) :              1    Log(Levenberg)        0
+ CPU time used [sec]         :         321.78    for last step    321.72
+ Time elapsed [hh:mm]        :           0:06    Time needed        0:08
+                                                                                 
+
+
+     Parameter            Current  Last Update Total Update        Sens. Active
+  1. r_left         : -0.8500E+03   0.0000E+00   0.0000E+00        0.000       
+  2. r_right        : -0.8500E+03   0.0000E+00   0.0000E+00        0.000       
+  3. r_upper        : -0.6500E+03   0.0000E+00   0.0000E+00        0.000       
+  4. s_upper        : -0.4500E+03   0.0000E+00   0.0000E+00        0.000       
+  5. f_r_top        :  0.9000E+03   0.0000E+00   0.0000E+00        0.000       
+  6. f_r_base       :  0.9000E+03   0.0000E+00   0.0000E+00        0.000       
+  7. f_g_top        :  0.9000E+03   0.0000E+00   0.0000E+00        0.000       
+  8. f_l_top        :  0.9000E+03   0.0000E+00   0.0000E+00        0.000       
+  9. f_l_base       :  0.9000E+03   0.0000E+00   0.0000E+00        0.000       
+ 10. f_cov          :  0.9000E+03   0.0000E+00   0.0000E+00        0.000       
+ 11. f_cap          :  0.9000E+03   0.0000E+00   0.0000E+00        0.000       
+
+     TOUGH2 run No. :           1       1 -  1       1 -  1      Initial
+     Obj. Function  :  0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00

@@ -1,0 +1,178 @@
+> PARAMETER
+  >> PEST
+     >>> NONE Parameter 1
+         >>>> NAME : r_left
+         >>>> PRIOR : -850.0
+         >>>> RANGE : -950.0 -750.0
+         >>>> DEVIATION: 100.0
+         >>>> distribution is NORMAL
+         >>>> VALUE
+         <<<<
+     >>> NONE Parameter 2
+         >>>> NAME : r_right
+         >>>> PRIOR : -850.0
+         >>>> RANGE : -950.0 -750.0
+         >>>> DEVIATION: 100.0
+         >>>> distribution is NORMAL
+         >>>> VALUE
+         <<<<
+     >>> NONE Parameter 3
+         >>>> NAME : r_upper
+         >>>> PRIOR : -650.0
+         >>>> RANGE : -800.0 -500.0
+         >>>> DEVIATION: 100.0
+         >>>> distribution is NORMAL
+         >>>> VALUE
+         <<<<
+     >>> NONE Parameter 4
+         >>>> NAME : s_upper
+         >>>> PRIOR : -450.0
+         >>>> RANGE : -500.0 -350.0
+         >>>> DEVIATION: 25.0
+         >>>> distribution is NORMAL
+         >>>> VALUE
+         <<<<
+     # right side of fault
+     >>> NONE Parameter 5
+         >>>> NAME : f_r_top
+         >>>> PRIOR : 900
+         >>>> RANGE : 700. 1100.
+         >>>> DEVIATION: 100.0
+         >>>> distribution is NORMAL
+         >>>> VALUE
+         <<<<
+     >>> NONE Parameter 6
+         >>>> NAME : f_r_base
+         >>>> TIED TO : 5
+         >>>> ADD : 400
+         >>>> VALUE
+         <<<<
+     # Fault gauge
+     >>> NONE Parameter 7
+         >>>> NAME : f_g_top 
+         >>>> TIED TO : 5
+         >>>> ADD : -100
+         >>>> VALUE
+         <<<<
+     # left side of fault
+     >>> NONE Parameter 7
+         >>>> NAME : f_l_top 
+         >>>> TIED TO : 5
+         >>>> ADD : -200
+         >>>> VALUE
+         <<<<
+     >>> NONE Parameter 8
+         >>>> NAME : f_l_base 
+         >>>> TIED TO : 5
+         >>>> ADD : -75 
+         >>>> VALUE
+         <<<<
+     # the following parameters fix cover and cap in fault base
+     >>> NONE Parameter 8
+         >>>> NAME : f_cov 
+         >>>> TIED TO : 5
+         >>>> ADD : -100
+         >>>> VALUE
+         <<<<
+     >>> NONE Parameter 8
+         >>>> NAME : f_cap  
+         >>>> TIED TO : 5
+         >>>> ADD : -50
+         >>>> VALUE
+         <<<<
+     <<<
+  <<
+
+> OBSERVATIONS
+  >> TIME: 30 EQUALLY spaced YEARS between
+     1.00  30.0
+  
+#  >> RESTART TIME: 1
+#     0.0
+#     _o221 0 1.0E50
+#     _o221 1 1E6
+
+   >> PEST
+      >>> UNIVERSAL
+          >>>> DATA
+               dummy  0.0   1.0E-20
+          <<<<
+      <<<
+  >> TOTAL MASS COMPONENT : 3
+     >>> MATERIAL: FAULT 
+         >>>> ANNOTATION : tFault
+         >>>> NO DATA
+         >>>> standard DEVIATION: 1E9
+         <<<<
+     <<<
+  >> TOTAL MASS COMPONENT : 3
+     >>> MATERIAL: RESER 
+         >>>> ANNOTATION : tRes
+         >>>> NO DATA
+         >>>> standard DEVIATION: 1E10
+         <<<<
+     <<<
+  >> TOTAL MASS COMPONENT : 3
+     >>> MATERIAL: COVER 
+         >>>> ANNOTATION : tCover
+         >>>> standard DEVIATION: 3E7
+         >>>> NO DATA
+         <<<<
+     <<<
+  >> TOTAL MASS COMPONENT : 3
+     >>> MATERIAL: CAPRO 
+         >>>> ANNOTATION : tCap
+         >>>> standard DEVIATION: 1E8
+         >>>> NO DATA
+         <<<<
+     <<<
+  <<
+         
+> COMPUTATION
+  >> CONVERGENCE
+     >>> IGNORE WARNINGS
+     <<<
+
+  >> JACOBIAN
+     >>> PERTURBATION: 0.1
+     <<<
+  >> TOLERANCE
+     >>> perform : 10 ITERATIONS
+     <<<
+  >> OPTION
+#     >>> STEADY STATE
+     >>> FORWARD
+#      >>> SENSITIVITY
+#     >>> SENSITIVITY ANALYSIS MORRIS
+#         >>>> PATH: 10
+#         >>>> PARTITION: 10
+#         <<<< 
+     >>> PEST
+         >>>> EXECUTABLE BEFORE : &
+              "python /home/flo/bin/grid_to_iTOUGH_mesh_lowres_new_model.py"
+         >>>> TEMPLATE: 1
+              CO2_3D_model_2.tpl    CO2_3D_model_2.xml
+
+         >>>> INSTRUCTION: 1
+              dummy.ins dummy.out
+         <<<<
+     <<<
+
+FILE : template.dat 
+FILE : CO2_3D_model_2.tpl  
+FILE : CO2_3D_model_2.md5 
+FILE : Section1._1.s3d 
+FILE : Section1.sec 
+FILE : SurfaceTopography._1.s3d 
+FILE : SurfaceTopography.sec 
+FILE : dummy.ins  
+FILE : parameters_example.csv 
+
+  >> OUTPUT
+     >>> COVARIANCE
+     >>> YEARS
+     >>> FORMAT: COLUMNS
+     <<<
+
+  <<
+<

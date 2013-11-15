@@ -1,0 +1,174 @@
+
+ ==================================================================================================================================
+      ARRAY DIMENSIONS (SEE FILE maxsize.inc)
+ ----------------------------------------------------------------------------------------------------------------------------------
+      MAXEL     =   10000      Maximum number of elements
+      MAXCON    =   40000      Maximum number of connections
+      MAXK      =       3      Maximum number of components
+      MAXEQ     =       4      Maximum number of equations
+      MAXPH     =       3      Maximum number of phases
+      MAXB      =       8      Maximum number of phase-dependent secondary variables
+      MAXSS     =     100      Maximum number of sinks/sources
+      MAVTAB    =     100      Maximum average number of table entries per sink/source
+      MAXROC    =     200      Maximum number of rock types
+      MAXTSP    =       5      Maximum number of specified time steps, divided by eight
+      MAXLAY    =      10      Maximum number of reservoir layers for wells on deliverability
+      MXRPCP    =      14      Maximum number of parameters for relative permeability and capillary pressure functions
+      MXPCTB    =       5      Maximum number of points in table for ECM capillary pressure
+      MXTBC     =       5      Maximum number of elements with time vs. boundary condition
+      MXTBCT    =     200      Maximum number of time vs. pressure data
+      MAXTIM    =    1000      Maximum number of calibration times
+      MAXN      =      50      Maximum number of parameters to be estimated
+      MAXO      =     200      Maximum number of datasets
+      MAXM      =    1400      Maximum number of calibration points
+      MAXPD     =    1000      Maximum number of paired data
+      MAXR      =     200      Maximum number of elements or indices of each parameter or observation
+      MAXBRK    =      20      Maximum number of points in time at which SAVE file is written for restart
+      MAXEBRK   =      50      Maximum number of elements with new initial conditions after restart
+      MAXCOEFF  =       5      Maximum number of coefficients for data modeling functions
+      MAXMCS    =    1000      Maximum number of Monte Carlo simulations
+      MAXCURVE  =    2000      Maximum number of curves to be plotted
+      MAXXGR    =       3      Dimension of third index of array XGUESSR
+      MTYPE     =      27      Number of observation types
+      MPFMT     =       6      Number of plot file formats 
+ ----------------------------------------------------------------------------------------------------------------------------------
+
+
+ ----------------------------------------------------------------------------------------------------------------------------------
+      PROGRAM  VERSION   DATE                  COMMENT
+ ----------------------------------------------------------------------------------------------------------------------------------
+      iTOUGH2            Current version       iTOUGH2 V6.7 (JANUARY, 2012)                                                                                                                                                                                                                                    
+ ----------------------------------------------------------------------------------------------------------------------------------
+      iTOUGH   1.0       1 AUGUST    1992      ITOUGH User's Guide, Version 1.0, Report NIB 92-99
+      iTOUGH2  2.2       1 FEBRUARY  1994      iTOUGH2 User's Guide, Version 2.2, Report LBL-34581
+      iTOUGH2  3.0      12 JULY      1996      YMP Software qualification, Report LBNL-39489
+      iTOUGH2  3.1       1 APRIL     1997      iTOUGH2 Command Reference, Version 3.1, Report LBNL-40041
+      iTOUGH2  3.2      30 JUNE      1998      YMP Software Qualification, Report LBNL-42002
+      iTOUGH2  3.3       1 OCTOBER   1998      Parallelization using PVM, Report LBNL-42261
+      iTOUGH2  4.0      19 JANUARY   1999      Released by Energy Science and Technology Software Center
+      iTOUGH2  5.0      31 JULY      2002      Qualified for use within Yucca Mountain Project
+ ----------------------------------------------------------------------------------------------------------------------------------
+
+      WHATCOM  1.0      10 AUGUST    1993      Q: WHAT COMPUTER IS USED? A: LINUX
+      CALLSIG  1.0       5 DECEMBER  1995      #112: SIGNAL HANDLER
+      CPUSEC   1.0      10 AUGUST    1993      RETURNS CPU-TIME (VERSION LINUX)
+      OPENFILE 6.7       5 DECEMBER  2012      OPENS MOST FILES
+      OPENAFILE6.6      16 OCTOBER   2012      OPENS A FILE
+      LENOS    1.0       1 MARCH     1992      RETURNS LENGTH OF LINE
+      PREC     1.0       1 AUGUST    1992      CALCULATE MACHINE DEPENDENT CONSTANTS
+      ITHEADER 3.2      27 MAY       1998      PRINTS iTOUGH2 HEADER
+      DAYTIM   1.0      10 AUGUST    1993      RETURNS DATE AND TIME (VERSION SUN)
+      THEADER  6.0      29 JUNE      2007      PRINTS TOUGH2 HEADER
+      SOLVTYPE 1.0       1 OCTOBER   1999      INITIALIZE PARAMETERS FOR THE SOLVER PACKAGE
+      INPUT    6.4       5 MARCH     2009      READ ALL DATA PROVIDED THROUGH FILE *INPUT*
+      CHECKMAX 6.0       4 FEBRUARY  2008      CHECK KEY DIMENSIONS
+      FLOPP    6.6      29 MAY       2012      CALCULATE NUMBER OF SIGNIFICANT DIGITS FOR FLOATING POINT ARITHMETIC
+      RFILE    6.5       8 FEBRUARY  2010      INITIALIZE DATA FROM FILES *MESH* OR *MINC*, *GENER*, AND *INCON*
+      ITINPUT  1.0       1 AUGUST    1992      READS COMMANDS OF COMMAND LEVEL 1
+      READCOMM 6.6      12 APRIL     2011      READS A COMMAND
+      FINDKEY  6.5      15 APRIL     2010      READS A KEYWORD
+      LTU      1.0       1 AUGUST    1992      CONVERTS LOWER TO UPPER CASE
+      INPARAME 6.6       5 OCTOBER   2012      READS PARAMETERS TO BE ESTIMATED
+      INPAR    6.5      15 APRIL     2010      READS PARAMETER VALUES, WEIGHTS, ETC.
+      INPARSPEC6.6       9 AUGUST    2012      READS FOURTH-LEVEL COMMANDS FOR PARAMETERS
+      NEXTWORD 6.5      15 APRIL     2010      EXTRACTS NEXT WORD ON A LINE
+      READINT  1.0       1 AUGUST    1992      READS AN INTEGER AFTER A COLON
+      INOBSERV 6.6      23 JUNE      2012      READS TYPE OF OBSERVATION
+      INTIMES  6.6      20 NOVEMBER  2011      READS TIMES AT WHICH OBSERVATIONS ARE AVAILABLE
+      INOBS    6.6      18 NOVEMBER  2011      READS OBSERVATION INFORMATION
+      INOBSDAT 6.6       4 JANUARY   2012      READS OBSERVED DATA
+      INPAIRED 6.5       8 APRIL     2010      READS PAIRED DATA SET
+      SKIP     2.5       6 MARCH     1996      SKIPS LINES IN FILE
+      INELEM   6.6      11 APRIL     2012      READS GRID BLOCK NAMES OR ROCK TYPES
+      INWEIGHT 5.1      25 FEBRUARY  2005      READS WEIGHTS
+      INCOMPUT 1.0       1 AUGUST    1992      READS VARIOUS COMPUTATIONAL PARAMETERS
+      INTOLER  6.6      15 JANUARY   2012      READS TOLERANCE/STOPPING CRITERIA
+      INJACOB  6.4       3 MAY       2009      READS PARAMETERS FOR COMPUTING JACOBIAN
+      READREAL 5.1      25 FEBRUARY  2005      READS A REAL AFTER A COLON
+      INOPTION 6.6       7 NOVEMBER  2012      READS PROGRAM OPTIONS
+      INPEST   6.7      17 DECEMBER  2012      READ PEST INPUT PARAMETERS
+      INPRINT  6.5      28 SEPTEMBER 2010      READS OUTPUT OPTIONS
+      GETINDEX 6.6      20 NOVEMBER  2011      GETS INDEX OF ELEMENTS, CONNECTIONS, AND SOURCES
+      GETNMAT  6.0       8 AUGUST    2007      IDENTIFIES MATERIAL NUMBER
+      INIGUESS 6.6       5 OCTOBER   2012      ASSIGN DEFAULT INITIAL PARAMETER GUESS
+      IXLBXUB  2.1      21 SEPTEMBER 1993      INITIALIZES ARRAY XLB AND XUB
+      ADDNOISE 6.6      20 NOVEMBER  2011      ADDS NOISE TO SYNTHETIC DATA
+      TIMEWIND 6.6       7 FEBRUARY  2012      SETS TIME WINDOW
+      SETWSCAL 6.6      17 NOVEMBER  2011      INITIALIZES ARRAY WSCALE
+      OBSMEAN  6.6      20 NOVEMBER  2011      CALCULATES MEAN OF OBSERVATIONS
+      OBSERVED 6.6      17 NOVEMBER  2011      RETURNS OBSERVED DATA AS A FUNCTION OF TIME
+      SETXSCAL 1.0       1 AUGUST    1992      INITIALIZES ARRAY XSCALE
+      IN_OUT   6.6       5 OCTOBER   2012      PRINTS A SUMMARY OF INPUT DATA
+      INITPEST 6.5      19 NOVEMBER  2009      INITIALIZES PEST
+      UTL      1.0       1 AUGUST    1992      CONVERTS UPPER TO LOWER CASE
+      PRSTATUS 3.1      20 FEBRUARY  1997      PRINTS STATUS MESSAGES
+      ERRORMSG 5.1      19 SEPTEMBER 2005      PRINTS ERROR MESSAGES
+      FCNLEV   5.0      12 JULY      2002      RETURNS WEIGHTED RESIDUAL VECTOR
+      UPDATE   6.6       5 OCTOBER   2012      UPDATES PARAMETERS
+      UPDATEPES6.5      19 NOVEMBER  2009      UPDATES PEST PARAMETERS
+      PRIORINF 6.6      26 APRIL     2012      PRIOR INFORMATION
+      OBSERVAT 6.6     17 NOVEMBER   2011      COMPARES MEASURED AND CALCULATED QUANTITIES
+      EXECOMM  1.0       5 APRIL     2010      EXECUTE COMMAND USING SYSTEM CALL
+      OBSERVATP6.5      15 APRIL     2010      READS PEST OBSEVATIONS
+      GETMESH  3.2      20 JUNE      1998      READS FILE MESH, MINC, GENER, AND INCON
+      GETINCON 6.5      15 APRIL     2010      READS FILE INCON
+      INITTOUG 6.6       3 AUGUST    2011      INITIALIZES TOUGH2 RUN (REPLACES CYCIT)
+      EOS      1.0cd    18 DECEMBER  2007      *ECO2* THERMOPHYSICAL PROPERTIES MODULE FOR H2O/NACL/CO2
+                                               USING H2O-CO2 PHASE PARTITIONING ACCORDING TO SPYCHER AND PRUESS, LBNL-56334, SEPTEMBER 04
+      HALITE   1.0      25 FEBRUARY  1993      EQUILIBRIUM HALITE SOLUBILITY
+
+      PVTCX    1.0      11 MAY       2005      H2O-CO2 PHASE PARTITIONING FOR BRINES (NIC SPYCHER, LBNL)
+                                               OUTPUT MASS FRACTIONS (K.P.)
+
+      FUGA     1.0      13 MAY       2005      CALCULATE H2O-CO2 FUGACITY COEFFICIENTS (NIC SPYCHER, LBNL)
+      NCG      1.1       8 AUGUST    2005      SPECIFIC ENTHALPY, DENSITY, AND VISCOSITY OF GASEOUS CO2
+
+      YH2O     1.0       8 AUGUST    2005      CALCULATE H2O AND CO2 MOL FRACTIONS (NIC SPYCHER, LBNL)
+
+      CALC_GAM 1.0      16 FEBRUARY  2005      CALCULATE CO2 ACTIVITY COEFFICIENT (NIC SPYCHER, LBNL)
+      DHAL     1.0      11 MARCH     1996      HALITE DENSITY AS FUNCTION OF T AND P
+      SAT_67   4.2 MOS  16 JULY      1999      STEAM TABLE EQUATION: SATURATION PRESSURE AS FUNCTION OF TEMPERATURE
+      SATB     1.0      26 MARCH     1992      VAPOR PRESSURE OF BRINE AS FUNCTION OF T, P AND SALT MASS FRACTION
+      COBRI    1.1       2 JUNE      2005      DENSITY AND ENTHALPY OF LIQUID BRINE AS FUNCTION OF T, P AND SALT MASS FRACTION
+                                               CHOOSE BRINE ENTHALPY CORRELATION BY IE(15); DEFAULT IS LORENZ ET AL. (2000)
+      COWAT_67 4.2 MOS  16 JULY      1999      LIQUID WATER DENSITY AND INT. ENERGY AS FUNCTION OF TEMPERATURE AND PRESSURE
+      TCRITIC  1.0       5 NOVEMBER  1996      CRITICAL T OF NACL SOLUTIONS AS A FUNCTION OF SALINITY
+      BRINEN   1.0       5 OCTOBER   2000      DEVIATION OF BRINE ENTHALPY VS. T AND SALT MASS FRACTION AFTER LORENZ ET AL. (2000)
+      MOVO     1.0      25 March     2005      MOLAR VOLUME OF DISSOLVED CO2 AFTER J. GARCIA, LBNL-49023
+      VISB     1.1       2 June      2005      VISCOSITY OF BRINE AS FUNCTION OF T, P AND SALT MASS FRACTION
+      VISH2O   1.0 E    22 MARCH     1996      VISCOSITY OF LIQUID WATER OR VAPOR (ASME, 1977)
+      SOLUT    1.2       2 JUNE      2005      HEAT OF SOLUTION OF CO2 AS FUNCTION OF T AND SALT MASS FRACTION
+      PCAP     5.2cd    18 DECEMBER  2007      CAPILLARY PRESSURE FUNCTIONS
+      AKREL    1.0      30 MAY       1993      PERMEABILITY REDUCTION FACTOR AS FUNCTION OF POROSITY REDUCTION
+      HHAL     1.0       5 NOVEMBER  1999      HALITE SPECIFIC ENTHALPY AS FUNCTION OF T
+
+      BALLA    1.13     13 MAY       2005      PERFORM SUMMARY BALANCES FOR VOLUME, MASS, AND ENERGY
+      CALLTOUG 6.4      15 FEBRUARY  2009      CALLS TOUGH2 FOR ONE TIME STEP
+      TSTEP    6.4      22 JANUARY   2009      ADJUST TIME STEPS TO COINCIDE WITH USER-DEFINED TARGET TIMES
+      MULTI    6.4       9 OCTOBER   2009      ASSEMBLE ALL ACCUMULATION AND FLOW TERMS
+      QU       6.4      12 NOVEMBER  2009      ASSEMBLE ALL SOURCE AND SINK TERMS
+                                               "RIGOROUS" STEP RATE CAPABILITY FOR MOP(12) = 2
+      LINEQ    2.1      30 JANUARY   2007      INTERFACE FOR LINEAR EQUATION SOLVERS
+      CONVER   6.4      20 FEBRUARY  2009      UPDATE PRIMARY VARIABLES AFTER CONVERGENCE IS ACHIEVED
+      RELP     4.5cd    18 DECEMBER  2007      RELATIVE PERMEABILITIES
+
+      OUT      1.1cd    18 DECEMBER  2007      PRINT RESULTS FOR ELEMENTS, CONNECTIONS, AND SINKS/SOURCES
+      PSCO2    1.0      21 October   2003      CALCULATE CO2 SATURATION PRESSURE AS FUNCTION OF TEMPERATURE
+      CO2SAT   1.0       8 AUGUST    2002      INTERPOLATE CO2 PROPERTIES ALONG SATURATION LINE
+      VISGAS   1.1       8 AUGUST    2005      VISCOSITY OF NCG AS FUNCTION OF TEMPERATURE AND PRESSURE
+      REGULARI 6.4       3 MARCH     2009      REGULARIZATION
+      OBJFUN   6.6      14 FEBRUARY  2012      COMPUTE OBJECTIVE FUNCTION
+      WRITEPAR 6.0       8 APRIL     2008      WRITE BEST FIT PARAMETER SET AND BLOCK ROCKS
+      PLOTFILE 6.6      15 MARCH     2011      WRITES PLOTFILE IN TECPLOT-FORMAT
+      TERMINAT 6.5      27 JANUARY   2010      PERFORM ERROR ANALYSIS AND TERMINATE iTOUGH2
+      WRIFI    6.5      15 APRIL     2010      AT THE COMPLETION OF A TOUGH2 RUN, WRITE PRIMARY VARIABLES ON FILE *SAVE*
+      QNORMAL  2.5      13 JANUARY   1996      RETURNS QUANTILE OF NORMAL DISTRIBUTION
+      LOGLIKE  2.1      29 SEPTEMBER 1993      COMPUTE LOG-LIKELIHOOD
+      MLLAMBDA 6.4       4 MARCH     2009      ESTIMATES NEW LAMBDAS
+      MOMENT   3.3      28 OCTOBER   1998      MOMENTS OF DISTRIBUTION
+      LINREG   5.0      12 JULY      2002      LINEAR REGRESSION ANALYSIS
+      SORT     3.1      17 APRIL     1997      SORTS ARRAY
+      PLOTIF   1.0      15 FEBRUARY  1993      PLOT INTERFACE
+      REFORMAT 6.6       8 NOVEMBER  2011      REFORMATS PLOT FILES
+      QUOTES   1.0      15 FEBRUARY  1993      RETURNS TEXT BETWEEN QUOTES
+      WRITEMESH6.6       9 APRIL     2012      AT THE COMPLETION OF A TOUGH2 RUN, REWRITE FILE *MESH*
