@@ -10,6 +10,12 @@ Click on the screenshots below to get to the repositories:
 <a href="http://www.sciencedirect.com/science/journal/aip/00983004", target="blank">Computers and Geosciences</a>
 -----
 
-<a href="CAGEO">![Screenshot Computers and Geosciences page](CAGEO/doc/images/CAGEO_2013.png?raw=true)]</a>
+___
+
+<a href="CAGEO/CAGEO_2013">![Screenshot Computers and Geosciences page](CAGEO/doc/images/CAGEO_2013.png?raw=true)]</a>
+
+___
+
+<a href="CAGEO/CAGEO_2012">![Screenshot Computers and Geosciences page](CAGEO/doc/images/CAGEO_2012.png?raw=true)]</a>
 
 
