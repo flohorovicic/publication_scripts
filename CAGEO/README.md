@@ -1,6 +1,6 @@
 ![Screenshot Computers and Geosciences page](doc/images/CAGEO_2013.png?raw=true)
 
-Integrating Structural Geological Data into the Inverse Modelling Framework of iTOUGH2 - Information
+Information
 ----
 
 The scripts and models in this directory have been used in this manuscript:
