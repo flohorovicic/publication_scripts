@@ -13,6 +13,3 @@ Disclaimer: the code is distributed in the hope that it will be useful, but WITH
 
 Have fun!
 
-Overview
-----
-
