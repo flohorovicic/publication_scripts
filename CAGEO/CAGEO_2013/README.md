@@ -1,5 +1,6 @@
-Integrating Structural Geological Data into the Inverse Modelling Framework of iTOUGH2
-=====
+Click on the screenshot to get to the publication webpage:
+
+<a href="http://www.sciencedirect.com/science/article/pii/S0098300413002781", target="_blank">![Screenshot Computers and Geosciences page](../doc/images/CAGEO_2013.png?raw=true)</a>
 
 Information
 ----
@@ -13,7 +14,7 @@ http://www.sciencedirect.com/science/article/pii/S0098300413002781
 
 Disclaimer/ Copyright information
 ----
-The content is published under a Creative Commons - Attribution-Share-Alike license. For more information, see http://creativecommons.org/licenses/by-sa/2.5/au/ . Please cite the manuscript if you use the content in any further scientific work.
+The content is published under a Creative Commons - Attribution-Share-Alike license. For more information, see http://creativecommons.org/licenses/by-sa/2.5/au/
 
 Disclaimer: the code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 

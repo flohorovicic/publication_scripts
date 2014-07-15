@@ -1,0 +1,7 @@
+CO2_itough_inv.inv
+CO2_fwd.dat
+/home/flo/04_iTOUGH2/CO2_paper/test_fwd_new_model/test_fwd_lowres
+Wed Feb 27 11:22:43 WST 2013
+-no_delete -m MESH -i CO2_incon.inc CO2_itough_inv.inv CO2_fwd.dat 17
+/home/flo/bin/itough2
+/home/flo/it2_13222
