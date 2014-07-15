@@ -13,7 +13,7 @@ http://www.sciencedirect.com/science/article/pii/S0098300413002781
 
 Disclaimer/ Copyright information
 ----
-The content is published under a Creative Commons - Attribution-Share-Alike license. For more information, see http://creativecommons.org/licenses/by-sa/2.5/au/
+The content is published under a Creative Commons - Attribution-Share-Alike license. For more information, see http://creativecommons.org/licenses/by-sa/2.5/au/ . Please cite the manuscript if you use the content in any further scientific work.
 
 Disclaimer: the code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
